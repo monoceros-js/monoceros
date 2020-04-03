@@ -1,0 +1,5 @@
+{
+  "global": "Monoceros",
+  "filename": "monoceros",
+  "dependencies": ["Cluster", "Monoceros", "MonocerosCoreError"]
+}
