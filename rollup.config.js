@@ -1,7 +1,5 @@
 import babel from 'rollup-plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
-import json from '@rollup/plugin-json'
-import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 import { global, dependencies, filename } from './monoceros.config.json'
 
@@ -54,5 +52,5 @@ if (process.env.BUILD === 'module') {
 export default {
   input: './src/index.js',
   output,
-  plugins: [resolve(), json(), babel(babelOptions), commonjs()],
+  plugins: [resolve(), babel(babelOptions)],
 }
