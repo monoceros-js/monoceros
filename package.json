@@ -1,7 +1,7 @@
 {
   "name": "monoceros",
   "version": "1.0.0",
-  "description": "Monoceros core",
+  "description": "Monoceros-JS - Different scroll behaviours per container",
   "main": "dist/monoceros.js",
   "scripts": {
     "pre-commit:msg": "echo 'Pre-commit checks...' && exit 0",
