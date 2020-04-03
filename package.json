@@ -1,6 +1,6 @@
 {
   "name": "monoceros",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Monoceros-JS - Different scroll behaviours per container",
   "main": "dist/monoceros.js",
   "scripts": {
