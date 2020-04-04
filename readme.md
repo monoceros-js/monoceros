@@ -1,6 +1,6 @@
 # monoceros
 
-> Different scroll behaviours per container
+> Different scroll behiavours per section
 
 * * *
 
@@ -12,6 +12,7 @@
   - [HTML Setup](#html-setup)
   - [Set options](#set-options)
   - [Register plugins](#register-plugins)
+- [Plugins](#plugins)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
@@ -34,23 +35,23 @@ Monoceros.init()
 
 ### HTML Setup
 
-- `[data-monoceros-viewport]` <sup>(required)</sup> - Fixed container where the page will scroll in
+- `[data-monoceros-viewport]` <sup>(required)</sup> - Fixed section where the page will scroll in
 
-- `[data-monoceros-container]` <sup>(optional)</sup> - Section within the page where scroll behaviour will be different. Will receive classes based on visibility within viewport
+- `[data-monoceros-section]` <sup>(optional)</sup> - Section within the page where scroll behaviour will be different. Will receive classes based on visibility within viewport
 
-- `[data-monoceros-item]` <sup>(optional)</sup> - Item within the viewport or container. Will receive classes based on visibility within viewport and/or container
+- `[data-monoceros-item]` <sup>(optional)</sup> - Item within the viewport or section. Will receive classes based on visibility within viewport and/or section
 
 ```html
 <body>
   <div data-monoceros-viewport>
-    <div data-monoceros-item>
-      Item without container
-    <div>
-    <div data-monoceros-container>
+    <section data-monoceros-item>
+      Item without monoceros section
+    <section>
+    <section data-monoceros-section>
       <div data-monoceros-item>
-        Item with container
+        Item with monoceros-section
       </div>
-    </div>
+    </section>
   </div>
 <!-- scripts and hidden stuff go here -->
 </body>
@@ -63,6 +64,26 @@ Monoceros.init()
 ```js
 Monoceros.set({ debug: true })
   .init()
+```
+
+#### Options
+
+| Property          | Default value  | Description                                                                               |
+| ----------------- | -------------- | ----------------------------------------------------------------------------------------- |
+| `classNamePrefix` | `'m-'`         | Prefix put before every class added by monoceros. (does not apply to 'in-viewport' class) |
+| `selectorPrefix`  | `'monoceros-'` | Prefix every data attribute added by monoceros starts with.                               |
+| `debug`           | `false`        | Controls wether or not monoceros (and plugins) will output debug logs to the console.     |
+| `base`            | _object_       | Controls naming of all elements (viewport, section, item, rogue)                          |
+
+##### options.base defaults
+
+```js
+{
+  viewport: 'viewport',
+  section: 'section',
+  item: 'item',
+  rogue: 'rogue',
+}
 ```
 
 ### Register plugins
@@ -106,6 +127,10 @@ Monoceros
 ```
 
 * * *
+
+## Plugins
+
+- [@monoceros/plugin-reverse-scroll](https://github.com/monoceros-js/plugin-reverse-scroll) - Plugin that reverses the scroll direction within a `[data-monoceros-section]`
 
 ## Acknowledgements
 

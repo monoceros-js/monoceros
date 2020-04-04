@@ -1,6 +1,6 @@
 {
   "name": "monoceros",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Non-namespaced version of @monoceros/core - Different scroll behaviours per section",
   "main": "dist/monoceros.js",
   "scripts": {
@@ -43,6 +43,6 @@
     "rollup-plugin-babel": "^4.4.0"
   },
   "dependencies": {
-    "@monoceros/core": "^1.0.5"
+    "@monoceros/core": "^1.0.6"
   }
 }
