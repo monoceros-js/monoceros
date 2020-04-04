@@ -1,20 +1,17 @@
 {
   "name": "monoceros",
-  "version": "1.0.1",
-  "description": "Monoceros-JS - Different scroll behaviours per container",
+  "version": "1.0.2",
+  "description": "Non-namespaced version of @monoceros/core - Different scroll behaviours per section",
   "main": "dist/monoceros.js",
   "scripts": {
     "pre-commit:msg": "echo 'Pre-commit checks...' && exit 0",
     "test": "npm run lint",
     "lint": "npm run lint:md",
     "lint:md": "remark .",
-    "build": "npm run build:production && npm run build:md",
+    "build": "npm run build:module && npm run build:browser && npm run build:md",
     "build:md": "remark readme.md --output",
-    "build:dev": "npm run build:module && npm run build:browser_dev",
-    "build:production": "npm run build:module && npm run build:browser_prod",
     "build:module": "rollup -c --environment BUILD:module",
-    "build:browser_prod": "rollup -c --environment BUILD:browser_production",
-    "build:browser_dev": "rollup -c --environment BUILD:browser_development"
+    "build:browser": "rollup -c --environment BUILD:browser"
   },
   "keywords": [
     "scroll",
@@ -46,6 +43,6 @@
     "rollup-plugin-babel": "^4.4.0"
   },
   "dependencies": {
-    "@monoceros/core": "^1.0.4"
+    "@monoceros/core": "^1.0.5"
   }
 }
